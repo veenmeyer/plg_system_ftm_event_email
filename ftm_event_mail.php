@@ -17,7 +17,7 @@ class plgSystemFtm_event_mail extends JPlugin {
 	function onAfterInitialise() { 
 	
 	
-		$query = 'SELECT * FROM #__firefighters_termine WHERE state = "1" AND datum_start > Current_TimeStamp AND datum_start < DATE_ADD(Current_TimeStamp, INTERVAL '.$this->params->get('hours','24').' HOUR) AND email = "1" AND email_gesendet = "0" ORDER BY datum_start ASC' ;
+		$query = 'SELECT * FROM #__firefighters_termine WHERE state = "1" AND datum_start > Current_TimeStamp AND datum_start < DATE_ADD(Current_TimeStamp, INTERVAL '.$this->params->get('hours','24').' HOUR) AND email = "1" ORDER BY datum_start ASC' ;
 		$db	= JFactory::getDBO();
 		$db->setQuery( $query );
 		$termine = $db->loadObjectList(); 
@@ -82,8 +82,13 @@ if (count($termine) > 0) {
 			foreach ($mailliste AS $empf) {
 			$mail = JFactory::getMailer();
 			$toemail       = $empf; 
-			if ($debug) : $toemail  =$this->params->get('admin'); endif;
 			$subject       = 'Termin :'.$termin->name.' (für '.$termin->abteilungen.')';
+			
+			if ($debug) : 
+					$toemail  =$this->params->get('admin'); 
+					$subject       = 'Test-Termin :'.$termin->name.' (für '.$termin->abteilungen.')';
+			endif;
+			
 			//$mail->addAttachment($attachment);
 			$mail->addRecipient($toemail);
 				//$mail->addBCC(""); 
@@ -108,11 +113,10 @@ if (count($termine) > 0) {
 			
 				$send_email = implode(', ', $send_email);
 				//echo 'versendet: '.$send_email;
-				if (!$debug) {  
 				$db		= JFactory::getDBO();
 				$query	= $db->getQuery(true);
 				$query->update('#__firefighters_termine');
-				$query->set('email_gesendet = "1" ');
+				$query->set('email = "0" AND email_gesendet ="1" ');
 				$query->where('`id` ="'.$termin->id.'"');
 				$db->setQuery((string) $query);
 
@@ -123,7 +127,6 @@ if (count($termine) > 0) {
 				catch (RuntimeException $e)
 				{
 					JError::raiseError(500, $e->getMessage());
-				}
 				}
 				
 	}
