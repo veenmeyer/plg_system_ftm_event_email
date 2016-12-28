@@ -2,13 +2,13 @@
 <extension version="3.0" type="plugin" group="system"  method="upgrade">
   <name>plg_system_ftm_event_mail</name>
   <author>Ralf Meyer</author>	
-	<creationDate>23.10.2016</creationDate>
+	<creationDate>2016-12-28</creationDate>
   <copyright>GNU General Public License version 2 or later</copyright>
   <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL 3</license>
   <authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
   <authorUrl>www.einsatzkomponente.de</authorUrl>
-  <version>1.01</version>
-	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>plg_ftm_event_mail für J3.x</b></span><br/><br/><span style="font-size:10px;"></span><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="http://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
+  <version>1.02</version>
+	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>plg_ftm_event_mail für J3.x</b></span><br/><br/><span style="font-size:10px;"></span><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="https://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
 	]]></description>	
 	<files>
 		<folder>language</folder>
@@ -53,6 +53,6 @@
 <!-- UPDATESERVER DEFINITION -->
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" priority="1" name="plg_ftm_event_mail">http://www.feuerwehr-veenhusen.de/update/com_einsatzkomponente-update.xml</server>
+		<server type="extension" priority="1" name="plg_ftm_event_mail">https://www.feuerwehr-veenhusen.de/update/plg_ftm_event_mail-update.xml</server>
 	</updateservers>
 </extension>
