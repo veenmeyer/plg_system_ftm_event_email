@@ -82,6 +82,7 @@ if (count($termine) > 0) {
 			foreach ($mailliste AS $empf) {
 			$mail = JFactory::getMailer();
 			$toemail       = $empf; 
+			$mail->setSender($this->params->get('admin'));
 			$subject       = 'Termin :'.$termin->name.' (für '.$termin->abteilungen.')';
 			
 			if ($debug) : 
