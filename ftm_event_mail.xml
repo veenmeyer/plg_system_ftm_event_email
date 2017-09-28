@@ -54,6 +54,6 @@
 <!-- UPDATESERVER DEFINITION -->
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="plugin" priority="1" name="plg_ftm_event_mail" >https://www.feuerwehr-veenhusen.de/update/plg_ftm_event_mail-update.xml</server>
+		<server type="extension" priority="1" name="plg_ftm_event_mail" >https://www.feuerwehr-veenhusen.de/update/plg_ftm_event_mail-update.xml</server>
 	</updateservers>
 </extension>
