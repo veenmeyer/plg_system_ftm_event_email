@@ -95,14 +95,14 @@ if (count($termine) > 0) {
 				//$mail->addBCC(""); 
 				$mail->setSubject($subject);
 				$mail->isHTML(true);
-						$mail->setBody('<h1>Terminerinnerung: '.$termin->name.' </h1><p>Abteilung: '.$termin->abteilungen.'</p><p><b>Datum/Uhrzeit: '.$termin->datum_start.' Uhr</b></p><p>'.$termin->beschreibung).'</p>';
+						$mail->setBody('<h1>Terminerinnerung: '.$termin->name.' </h1><p>Abteilung: '.$termin->abteilungen.'</p><p>Datum/Uhrzeit: '.$termin->datum_start.' Uhr</p><p>'.$termin->beschreibung).'</p>';
 					if(!$mail->Send()) {
 						if ($this->params->get('admin')) {
 						$mail = JFactory::getMailer();
 						$mail->addRecipient($this->params->get('admin'));
 						$mail->setSubject('Nicht versendet an '.$toemail.':'.$subject);
 						$mail->isHTML(true);
-						$mail->setBody('<h1>Terminerinnerung: '.$termin->name.' </h1><p>Abteilung: '.$termin->abteilungen.'</p><p><b>Datum/Uhrzeit: '.$termin->datum_start.' Uhr</b></p><p>'.$termin->beschreibung).'</p>';
+						$mail->setBody('<h1>Terminerinnerung: '.$termin->name.' </h1><p>Abteilung: '.$termin->abteilungen.'</p><p>Datum/Uhrzeit: '.$termin->datum_start.' Uhr</p><p>'.$termin->beschreibung).'</p>';
 						$mail->Send();
 						$bug_email [] = $toemail;
 						}
