@@ -2,12 +2,12 @@
 <extension version="3.0" type="plugin" group="system"  method="upgrade">
   <name>plg_system_ftm_event_mail</name>
   <author>Ralf Meyer</author>	
-	<creationDate>2017-09-26</creationDate>
+	<creationDate>2017-10-15</creationDate>
   <copyright>GNU General Public License version 2 or later</copyright>
   <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL 3</license>
   <authorEmail>ralf.meyer@einsatzkomponente.de</authorEmail>
   <authorUrl>www.einsatzkomponente.de</authorUrl>
-  <version>1.05</version>
+  <version>1.06</version>
 	<description><![CDATA[<div style="border:1px solid #000; padding-left:5px;"><span style=" font-size: 18px; color:#F00;"><b>plg_ftm_event_mail für J3.x</b></span><br/><br/><span style="font-size:10px;"></span><br/>Für weitere Informationen besuchen Sie bitte unser Supportforum <a href="https://www.einsatzkomponente.de" target="_blank">einsatzkomponente.de</a> </div>
 	]]></description>	
 	<files>
